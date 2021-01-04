@@ -25,7 +25,11 @@ def index(request):
                 else:
                     messages.error(
                         request, f'Alguien ya reservó ese espacio :(')
-                    return redirect('index')
+                    context = {
+                        'reservations': reservations,
+                        'form': form,
+                    }
+                    return render(request, 'reservations/index.html', context)
             else:
                 for i in range(1, len(res_by_day)):
                     j = 0
@@ -37,7 +41,11 @@ def index(request):
                 if j == len(res_by_day):
                     messages.error(
                         request, f'Alguien ya reservó ese espacio :(')
-                    return redirect('index')
+                    context = {
+                        'reservations': reservations,
+                        'form': form,
+                    }
+                    return render(request, 'reservations/index.html', context)
 
     context = {
         'reservations': reservations,
