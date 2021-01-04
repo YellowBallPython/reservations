@@ -5,10 +5,17 @@
 {% endblock title %}
 
 {% block body %}
-<div class="container">
-    <form method="post">
-        index :D
-    </form>
-</div>
+<section class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 section-content">
+                <h1>SALA VICTORIA</h1>
+                <p>Nosotros ponemos los chunches, vos el escándalo</p>
+                <a href="{% url 'reservations:make' %}" class="btn btn-outline-primary btn-size">Reservar</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 {% endblock body %}

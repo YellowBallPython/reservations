@@ -1,0 +1,24 @@
+.banner {
+    position: relative;
+    background: url(/static/images/bg2.jpg);
+    min-height: 602px;
+    background-size: cover;
+    background-position: center;
+}
+
+.section-content {
+    color: #fff;
+    padding-top: 150px;
+}
+
+.section-content h1 {
+    font-size: 72px;
+}
+
+.btn-size {
+    width: 150px;
+}
+
+.btn-sign-in {
+    margin-right: 10px;
+}
