@@ -1,4 +1,4 @@
-{% extends 'reservations/base.html' %}
+{% extends 'frontend/base.html' %}
 
 {% block title %}
 <title>Index</title>
@@ -14,16 +14,6 @@
         <hr>
     </div>
     {% endfor %}
-    {% if messages %}
-    {% for message in messages %}
-    <h5>{{message}}</h5>
-    {% endfor %}
-    {% endif %}
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Reservar">
-    </form>
 </div>
 
 {% endblock body %}

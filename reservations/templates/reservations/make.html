@@ -1,9 +1,21 @@
-{% extends 'reservations/base.html' %}
+{% extends 'frontend/base.html' %}
 
 {% block title %}
-<title>Index</title>
+<title>Make</title>
 {% endblock title %}
 
 {% block body %}
-<h1>index</h1>
+<div class="container">
+    {% if messages %}
+    {% for message in messages %}
+    <h5>{{message}}</h5>
+    {% endfor %}
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button is-primary is-small" type="submit" value="Reservar">
+    </form>
+</div>
+
 {% endblock body %}
