@@ -1,0 +1,24 @@
+{% extends 'reservations/base.html' %}
+
+{% block title %}
+<title>Index</title>
+{% endblock title %}
+
+{% block body %}
+<hr>
+{% for reservation in reservations %}
+<h5>Fecha de reservación: {{reservation.date|date:'M d, Y'}}</h5>
+<p>de {{reservation.ci}} a {{reservation.co}}</p>
+<hr>
+{% endfor %}
+{% if messages %}
+{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Reservar">
+</form>
+{% endblock body %}
