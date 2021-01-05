@@ -1,4 +1,5 @@
 {% extends 'frontend/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}
 <title>Make</title>
@@ -6,12 +7,12 @@
 
 {% block body %}
 <div class="container">
+    <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input class="btn btn-outline-info is-small mt-3" type="submit" value="Reservar">
+    </form>
 </div>
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input class="button is-primary is-small" type="submit" value="Reservar">
-</form>
-</div>
+
 
 {% endblock body %}

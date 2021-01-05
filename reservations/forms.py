@@ -5,4 +5,4 @@ from .models import Reservation
 class CreateReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = '__all__'
+        fields = ['date', 'ci', 'co']
