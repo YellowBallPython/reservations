@@ -15,7 +15,7 @@ def reservations_list(request):
     return render(request, 'reservations/list.html', context)
 
 
-@login_required(redirect_field_name='/users/login')
+@login_required()
 def make(request):
     form = CreateReservationForm()
     if request.method == 'POST':
