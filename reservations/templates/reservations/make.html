@@ -6,11 +6,12 @@
 
 {% block body %}
 <div class="container">
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input class="button is-primary is-small" type="submit" value="Reservar">
-    </form>
+</div>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="button is-primary is-small" type="submit" value="Reservar">
+</form>
 </div>
 
 {% endblock body %}
