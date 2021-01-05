@@ -17,7 +17,12 @@ def reservations_list(request):
 
 @login_required()
 def make(request):
-    form = CreateReservationForm()
+    ch_i = datetime.time(hour=9, minute=0)
+    ch_o = datetime.time(hour=10, minute=0)
+    # se usa el parámetro initial para setear defaults.
+    form = CreateReservationForm(initial={'date': datetime.date.today(),
+                                          'ci': ch_i,
+                                          'co': ch_o})
     if request.method == 'POST':
         form = CreateReservationForm(request.POST)
         if form.is_valid():

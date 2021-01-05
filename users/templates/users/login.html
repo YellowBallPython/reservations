@@ -14,20 +14,23 @@
         {% block messages %}
         {% endblock messages %}
     </div>
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="boder-bottom mb-4">Ingresar</legend>
-            {{form|crispy}}
-        </fieldset>
-        <div class="form-group">
-            <button formmethod="post" class="btn btn-outline-info mt-3" type="submit">Enviar</button>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="boder-bottom mb-4">Ingresar</legend>
+                {{form|crispy}}
+            </fieldset>
+            <div class="form-group">
+                <button formmethod="post" class="btn btn-outline-info mt-3" type="submit">Enviar</button>
+            </div>
+        </form>
+        <div class="boder-top pt-3">
+            <small class="text-muted">
+                Aún no tienes una cuenta? <a href="{% url 'frontend:register' %}">Créala aquí</a>
+            </small>
         </div>
-    </form>
-    <div class="boder-top pt-3">
-        <small class="text-muted">
-            Aún no tienes una cuenta? <a href="{% url 'frontend:register' %}">Créala aquí</a>
-        </small>
     </div>
+
 </div>
 {% endblock body %}
