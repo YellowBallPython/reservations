@@ -1,0 +1,30 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+<title>Logout</title>
+{% endblock title %}
+
+{% block body %}
+<section class="banner">
+    <div class="container">
+        <div class="messages-top">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}}">
+                {{message}}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% block messages %}
+            {% endblock messages %}
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 section-content-logout">
+                <h1>Vuelve cuando gustes :)</h1>
+                <p>Ingresa de nuevo: <a href="{% url 'frontend:login' %}">Log in</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}

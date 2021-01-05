@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Reservation
 from .forms import CreateReservationForm
@@ -14,6 +15,7 @@ def reservations_list(request):
     return render(request, 'reservations/list.html', context)
 
 
+@login_required(redirect_field_name='/users/login')
 def make(request):
     form = CreateReservationForm()
     if request.method == 'POST':
